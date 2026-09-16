@@ -7,20 +7,24 @@ import {
 } from 'class-validator'
 import { Gender } from '@prisma/client'
 
-export class CreateStudentDto {
+export class UpdateStudentDto {
+  @IsOptional()
   @IsString()
   @MinLength(2)
-  firstName: string
+  firstName?: string
 
+  @IsOptional()
   @IsString()
   @MinLength(2)
-  lastName: string
+  lastName?: string
 
+  @IsOptional()
   @IsDateString()
-  dateOfBirth: string
+  dateOfBirth?: string
 
+  @IsOptional()
   @IsEnum(Gender)
-  gender: Gender
+  gender?: Gender
 
   @IsOptional()
   @IsString()
@@ -30,6 +34,7 @@ export class CreateStudentDto {
   @IsString()
   address?: string
 
+  @IsOptional()
   @IsString()
-  registrationNr: string
+  photoUrl?: string
 }
