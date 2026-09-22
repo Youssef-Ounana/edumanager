@@ -576,7 +576,17 @@ docker compose -f docker-compose.prod.yml up -d --build
 
 ---
 
+## 🤝 Contribution
 
+Les contributions sont les bienvenues !
+
+1. Forkez le projet
+2. Créez une branche : `git checkout -b feat/ma-fonctionnalite`
+3. Commitez : `git commit -m "feat: description"`
+4. Pushez : `git push origin feat/ma-fonctionnalite`
+5. Ouvrez une Pull Request
+
+---
 
 ## 📄 Licence
 
@@ -587,5 +597,5 @@ MIT — libre d'utilisation, de modification et de distribution.
 <p align="center">
   Fait avec ❤️ par <a href="https://github.com/votre-username">Youssef Ounana</a>
   <br/>
-  <em>Tinmel</em>
+  <em>Tinmel — "école" en amazigh 🏔️</em>
 </p>
