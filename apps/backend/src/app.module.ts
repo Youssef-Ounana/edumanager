@@ -6,6 +6,7 @@ import { SchoolsModule } from './schools/schools.module'
 import { StudentsModule } from './students/students.module'
 import { SetupModule } from './setup/setup.module'
 import { SchoolYearsModule } from './school-years/school-years.module'
+import { ParentsModule } from './parents/parents.module'
 
 
 @Module({
@@ -19,6 +20,7 @@ import { SchoolYearsModule } from './school-years/school-years.module'
     StudentsModule,
     SetupModule,
     SchoolYearsModule,
+    ParentsModule,
   ],
 })
 export class AppModule {}

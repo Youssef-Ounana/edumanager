@@ -34,6 +34,7 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
   get auditLog() { return this.client.auditLog }
   get refreshToken() { return this.client.refreshToken }
   get passwordReset() { return this.client.passwordReset }
+  get $transaction() { return this.client.$transaction.bind(this.client) }
 
   async onModuleInit() {
     await this.client.$connect()
