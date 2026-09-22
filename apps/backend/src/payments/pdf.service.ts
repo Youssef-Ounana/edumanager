@@ -133,7 +133,7 @@ export class PdfService {
         .font('Helvetica')
         .fillColor('#9CA3AF')
         .text(
-          `Document généré automatiquement par EduManager le ${formatDate(new Date())}`,
+          `Document généré automatiquement par Tinmel le ${formatDate(new Date())}`,
           { align: 'center' }
         )
 
