@@ -73,31 +73,33 @@ export default function PaymentsPage() {
   }
 
   const downloadReceipt = async (paymentId: string, paymentNumber: string) => {
-    try {
-      const token = localStorage.getItem('accessToken')
-      const response = await fetch(
-        `http://localhost:3001/api/payments/${paymentId}/receipt`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
+  try {
+    const token = localStorage.getItem('accessToken')
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api'
+    
+    const response = await fetch(
+      `${apiUrl}/payments/${paymentId}/receipt`,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    )
 
-      if (!response.ok) throw new Error('Erreur téléchargement')
+    if (!response.ok) throw new Error('Erreur téléchargement')
 
-      const blob = await response.blob()
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = `recu-${paymentNumber}.pdf`
-      document.body.appendChild(a)
-      a.click()
-      document.body.removeChild(a)
-      URL.revokeObjectURL(url)
-    } catch (error) {
-      console.error('Erreur téléchargement PDF:', error)
-      alert('Erreur lors du téléchargement du reçu')
-    }
+    const blob = await response.blob()
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `recu-${paymentNumber}.pdf`
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(url)
+  } catch (error) {
+    console.error('Erreur téléchargement PDF:', error)
+    alert('Erreur lors du téléchargement du reçu')
   }
+}
 
   return (
     <div className="space-y-6">
